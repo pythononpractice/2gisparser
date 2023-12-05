@@ -40,7 +40,8 @@ def main():
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.get(url)
-    driver.find_element(By.XPATH, pathes.cookie_banner).click()
+    element_click(driver, pathes.main_banner)
+    element_click(driver, pathes.cookie_banner)
     count_all_items = int(get_element_text(driver, pathes.items_count))
     pages = round(count_all_items / 12 + 0.5)
     for _ in range(pages):
